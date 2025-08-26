@@ -91,24 +91,24 @@ export default function WelcomePage() {
                 <h3 className="font-semibold text-lg">Documentation & Resources</h3>
                 <div className="grid gap-3 md:grid-cols-2">
                   <Button variant="outline" className="h-auto p-4 justify-start" asChild>
-                    <Link href="/docs">
+                    <a href="https://ui.shadcn.com" target="_blank" rel="noopener noreferrer">
                       <div className="flex items-center gap-3">
                         <BookOpen className="h-5 w-5" />
                         <div className="text-left">
-                          <div className="font-medium">Local Documentation</div>
-                          <div className="text-sm text-muted-foreground">Complete component guides</div>
+                          <div className="font-medium">shadcn/ui Documentation</div>
+                          <div className="text-sm text-muted-foreground">Official component guides</div>
                         </div>
                       </div>
-                    </Link>
+                    </a>
                   </Button>
                   
                   <Button variant="outline" className="h-auto p-4 justify-start" asChild>
-                    <a href="https://ui.shadcn.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://nextjs.org/docs" target="_blank" rel="noopener noreferrer">
                       <div className="flex items-center gap-3">
                         <ExternalLink className="h-5 w-5" />
                         <div className="text-left">
-                          <div className="font-medium">shadcn/ui Docs</div>
-                          <div className="text-sm text-muted-foreground">Official documentation</div>
+                          <div className="font-medium">Next.js Documentation</div>
+                          <div className="text-sm text-muted-foreground">Framework guides</div>
                         </div>
                       </div>
                     </a>
@@ -154,7 +154,7 @@ export default function WelcomePage() {
                 </div>
               </div>
             </CardContent>
-                    </Card>
+          </Card>
         </div>
       </section>
     </div>
