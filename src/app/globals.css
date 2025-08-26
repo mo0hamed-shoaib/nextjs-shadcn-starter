@@ -111,6 +111,13 @@
   --sidebar-ring: oklch(0.439 0 0);
 }
 
+
+/* Web Interface Guidelines - Selection Styling */
+::selection {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -164,12 +171,6 @@
   /* Web Interface Guidelines - Input Sizing */
   input, textarea, select {
     font-size: 16px; /* Prevents iOS zoom on focus */
-  }
-  
-  /* Web Interface Guidelines - Selection Styling */
-  ::selection {
-    background-color: oklch(var(--accent));
-    color: oklch(var(--accent-foreground));
   }
   
   /* Web Interface Guidelines - Disable Transitions on Theme Switch */
