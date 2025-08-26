@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -83,7 +83,7 @@
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
+  --popover: oklch(0.269 0 0);
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
@@ -91,7 +91,7 @@
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --accent: oklch(0.371 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
@@ -109,14 +109,120 @@
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  
   body {
     @apply bg-background text-foreground;
+    
+    /* Web Interface Guidelines - Typography */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    
+    /* Web Interface Guidelines - Touch */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  /* Web Interface Guidelines - Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+  }
+  
+  /* Web Interface Guidelines - Tabular Numbers */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+  
+  /* Web Interface Guidelines - Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Web Interface Guidelines - Focus Rings */
+  *:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px oklch(var(--ring));
+  }
+  
+  /* Web Interface Guidelines - Hover States (Desktop Only) */
+  @media (hover: hover) {
+    .hover\:bg-accent:hover {
+      background-color: oklch(var(--accent));
+    }
+    
+    .hover\:text-accent-foreground:hover {
+      color: oklch(var(--accent-foreground));
+    }
+  }
+  
+  /* Web Interface Guidelines - Input Sizing */
+  input, textarea, select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+  
+  /* Web Interface Guidelines - Selection Styling */
+  ::selection {
+    background-color: oklch(var(--accent));
+    color: oklch(var(--accent-foreground));
+  }
+  
+  /* Web Interface Guidelines - Disable Transitions on Theme Switch */
+  .no-transition * {
+    transition: none !important;
+  }
+  
+  /* Web Interface Guidelines - Performance Optimizations */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  
+  /* Web Interface Guidelines - Decorative Elements */
+  .decorative {
+    pointer-events: none;
+  }
+  
+  /* Web Interface Guidelines - Interactive Elements */
+  .interactive {
+    user-select: none;
+  }
+  
+  /* Web Interface Guidelines - Button Press Animation */
+  button:active {
+    transform: scale(0.96);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Web Interface Guidelines - Dialog Animation */
+  .dialog-enter {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  
+  .dialog-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  
+  .dialog-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .dialog-exit-active {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.2s ease, transform 0.2s ease;
   }
 }
