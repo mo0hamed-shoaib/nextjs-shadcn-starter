@@ -1,153 +1,163 @@
 # Next.js 15 + shadcn/ui Starter Template
 
-A modern, production-ready starter template built with Next.js 15, shadcn/ui components, and TypeScript. This template includes all 56 shadcn/ui components, comprehensive documentation, and follows modern web development best practices.
+A professional, production-ready starter template featuring Next.js 15, shadcn/ui components, and Web Interface Guidelines.
 
 ## ✨ Features
 
 - **Next.js 15** - Latest version with App Router and Turbopack
-- **shadcn/ui** - All 56 components installed and ready to use
-- **TypeScript** - Full type safety throughout the application
-- **Dark Mode** - Built-in theme switching with next-themes
-- **Search Functionality** - Global search with Command component
-- **API Routes** - Example GET and POST endpoints
-- **Form Validation** - Complete form examples with validation
-- **Responsive Design** - Mobile-first approach with Tailwind CSS
-- **Web Interface Guidelines** - Follows modern UI/UX best practices
-
-## 🎯 Web Interface Guidelines
-
-This template implements the [Web Interface Guidelines](https://interfaces.rauno.me/) to ensure a polished, professional user experience:
-
-### Typography
-- **Font Smoothing**: `-webkit-font-smoothing: antialiased` for crisp text
-- **Text Rendering**: `text-rendering: optimizeLegibility` for better readability
-- **Tabular Numbers**: `font-variant-numeric: tabular-nums` for consistent number display
-- **iOS Text Size**: Prevents unexpected text resizing on iOS devices
-
-### Motion & Animation
-- **Fast Interactions**: All animations limited to 200ms for immediate feel
-- **Proportional Scaling**: Button press animations use 0.96 scale instead of 0.8
-- **Smooth Scrolling**: `scroll-behavior: smooth` for anchor navigation
-- **Dialog Animations**: Optimized enter/exit animations with proper scaling
-
-### Touch & Mobile
-- **Hover States**: Only visible on devices with hover capability (`@media (hover: hover)`)
-- **Input Sizing**: 16px+ font size prevents iOS zoom on focus
-- **Tap Highlight**: Disabled default iOS tap highlight with custom alternatives
-- **Touch Interactions**: Proper touch event handling
-
-### Accessibility
-- **Focus Rings**: Uses `box-shadow` instead of `outline` for better border-radius support
-- **ARIA Labels**: Proper labels for icon-only interactive elements
-- **Keyboard Navigation**: Full keyboard support for all interactive elements
-- **Screen Reader Support**: Semantic HTML and proper ARIA attributes
-
-### Performance
-- **Will Change**: Optimized for scroll animations and transitions
-- **Decorative Elements**: `pointer-events: none` for non-interactive elements
-- **User Select**: Disabled for interactive elements to prevent text selection
-- **Theme Switching**: Disabled transitions during theme changes to prevent layout shifts
-
-### CSS Classes Available
-```css
-/* Typography */
-.tabular-nums          /* Tabular number spacing */
-
-/* Performance */
-.will-change-transform /* Optimize transform animations */
-.will-change-opacity   /* Optimize opacity animations */
-
-/* Interactive Elements */
-.interactive           /* Disable text selection */
-.decorative           /* Disable pointer events */
-
-/* Theme Switching */
-.no-transition        /* Disable transitions */
-```
+- **shadcn/ui** - All 56 components pre-installed and configured
+- **TypeScript** - Full type safety
+- **Tailwind CSS v4** - Latest styling with OKLCH colors
+- **Dark Mode** - Built-in theme switching with system preference detection
+- **Web Interface Guidelines** - Professional UX patterns applied
+- **Sonner** - Modern toast notifications
+- **Sticky Navigation** - Professional header with theme toggle
+- **Documentation** - Complete component guides included
 
 ## 🚀 Quick Start
 
-1. **Clone the template**
-   ```bash
-   npx create-next-app@latest my-app --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
-   ```
+```bash
+# Clone the starter branch
+git clone -b starter https://github.com/your-repo/nextjs-shadcn-starter.git my-app
 
-2. **Install dependencies**
-   ```bash
-   cd my-app
-   npm install
-   ```
+# Or use npm
+npm create nextjs-shadcn-starter@starter my-app
 
-3. **Run the development server**
-   ```bash
-   npm run dev
-   ```
+# Navigate to your project
+cd my-app
 
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to see your application.
 
 ## 📁 Project Structure
 
 ```
 src/
-├── app/                    # Next.js 15 App Router
-│   ├── api/               # API routes
-│   ├── components/        # Page components
-│   ├── docs/             # Documentation page
-│   ├── forms/            # Form examples
-│   ├── layouts/          # Layout examples
-│   └── globals.css       # Global styles with Web Interface Guidelines
+├── app/
+│   ├── layout.tsx          # Root layout with theme + navigation
+│   ├── page.tsx            # Clean welcome page
+│   └── globals.css         # shadcn/ui + Web Interface Guidelines
 ├── components/
-│   ├── ui/               # shadcn/ui components (56 components)
-│   ├── examples/         # Example components
-│   └── theme-toggle.tsx  # Theme switching component
-└── lib/
-    └── utils.ts          # Utility functions
+│   ├── ui/                 # All shadcn/ui components
+│   ├── main-navigation.tsx # Sticky navigation header
+│   ├── theme-toggle.tsx    # Dark/light mode switcher
+│   └── footer.tsx          # Simple footer
+├── lib/
+│   └── utils.ts           # shadcn/ui utilities
+└── hooks/
+    └── use-mobile.ts      # Essential hooks
 ```
 
-## 🎨 Available Pages
+## 🎨 Components
 
-- **Overview** (`/`) - Template showcase and features
-- **Components** (`/components`) - Interactive component examples
-- **Forms** (`/forms`) - Form validation examples
-- **API** (`/api`) - API route examples
-- **Layouts** (`/layouts`) - Common layout patterns
-- **Documentation** (`/docs`) - Component documentation
+All 56 shadcn/ui components are pre-installed and ready to use:
 
-## 🔧 Customization
-
-### Adding New Components
-```bash
-npx shadcn@latest add [component-name]
-```
-
-### Theme Customization
-Edit `src/app/globals.css` to customize colors, fonts, and other design tokens.
-
-### Web Interface Guidelines
-All guidelines are implemented in `src/app/globals.css`. Add new guidelines by following the existing patterns.
+- **Layout**: Card, Container, Separator, Aspect Ratio
+- **Navigation**: Button, Link, Breadcrumb, Tabs, Menu
+- **Forms**: Input, Textarea, Select, Checkbox, Radio, Switch
+- **Feedback**: Alert, Toast, Progress, Skeleton, Badge
+- **Data Display**: Table, Data Table, Chart, Avatar
+- **Overlay**: Dialog, Popover, Tooltip, Hover Card
+- **And many more...**
 
 ## 📚 Documentation
 
-- **shadcn/ui**: [ui.shadcn.com](https://ui.shadcn.com)
-- **Next.js 15**: [nextjs.org/docs](https://nextjs.org/docs)
-- **Web Interface Guidelines**: [interfaces.rauno.me](https://interfaces.rauno.me)
+Navigate to `/docs` to access complete component documentation and guides:
+
+- **Component Documentation** - Detailed usage examples for all components
+- **shadcn/ui Guides** - Setup, theming, and customization guides
+- **Web Interface Guidelines** - Professional UX patterns and best practices
+
+## 🎯 Getting Started
+
+1. **Explore Components**: Visit `/docs` to see all available components
+2. **Customize Theme**: Modify colors in `src/app/globals.css`
+3. **Add Pages**: Create new pages in `src/app/`
+4. **Build**: Start building your application!
+
+## 🛠️ Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linting
+npm run lint
+```
+
+## 🎨 Theming
+
+The template uses shadcn/ui's OKLCH color system with CSS variables:
+
+```css
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  /* ... more variables */
+}
+```
+
+Customize colors by modifying the CSS variables in `src/app/globals.css`.
+
+## 📱 Responsive Design
+
+- **Mobile-first** approach
+- **Sticky navigation** for better UX
+- **Touch-friendly** interactions
+- **Accessible** components
+
+## 🔧 Configuration
+
+### Tailwind CSS
+
+The template uses Tailwind CSS v4 with the latest features:
+
+- **OKLCH colors** for better color spaces
+- **CSS variables** for theming
+- **Container queries** for responsive design
+- **Modern CSS features** for better performance
+
+### TypeScript
+
+Full TypeScript support with strict configuration:
+
+- **Strict mode** enabled
+- **Path mapping** configured
+- **Component types** included
+
+## 📄 License
+
+This template is based on [shadcn/ui](https://ui.shadcn.com/) and follows their license.
 
 ## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+4. Submit a pull request
 
-## 📄 License
+## 📞 Support
 
-This template is open source and available under the [MIT License](LICENSE).
+- **Documentation**: Visit `/docs` in your project
+- **shadcn/ui**: [ui.shadcn.com](https://ui.shadcn.com/)
+- **Next.js**: [nextjs.org](https://nextjs.org/)
 
-## 🙏 Acknowledgments
+---
 
-- [shadcn/ui](https://ui.shadcn.com) for the amazing component library
-- [Next.js](https://nextjs.org) team for the incredible framework
-- [Rauno](https://interfaces.rauno.me) for the Web Interface Guidelines
-- [Tailwind CSS](https://tailwindcss.com) for the utility-first CSS framework
+Built with ❤️ using Next.js 15 and shadcn/ui
