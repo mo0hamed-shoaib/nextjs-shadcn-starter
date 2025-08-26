@@ -44,7 +44,7 @@ export default function HomePage() {
                 <p className="text-sm text-muted-foreground">
                   Navigate to the documentation to find all the information you need:
                 </p>
-                <div className="space-y-2">
+                <div className="flex flex-col gap-3">
                   <Link href="/docs">
                     <Button variant="outline" className="w-full justify-between">
                       <span className="flex items-center gap-2">
