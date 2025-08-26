@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import Image from "next/image"
 import {
   Command,
   CommandDialog,
@@ -89,12 +90,29 @@ export function MainNavigation() {
             {/* Left Side */}
             <div className="flex items-center gap-6">
               {/* Logo */}
-              <div className="flex items-center gap-2">
-                <div className="w-6 h-6 bg-foreground rounded-sm flex items-center justify-center">
-                  <span className="text-background font-bold text-sm">/</span>
+              <Link href="/" className="flex items-center gap-3">
+                <div className="relative">
+                  {/* Light-on-dark logo for dark mode */}
+                  <Image
+                    src="/loom-light.svg"
+                    alt="Loom logo"
+                    width={32}
+                    height={32}
+                    className="hidden dark:block"
+                    priority
+                  />
+                  {/* Dark-on-light logo for light mode */}
+                  <Image
+                    src="/loom-dark.svg"
+                    alt="Loom logo"
+                    width={32}
+                    height={32}
+                    className="block dark:hidden"
+                    priority
+                  />
                 </div>
-                <span className="font-semibold">shadcn/ui Starter</span>
-              </div>
+                <span className="font-semibold">Loom Starter</span>
+              </Link>
 
               {/* Navigation Links */}
               <nav className="hidden md:flex items-center gap-1">
