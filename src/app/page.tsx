@@ -4,83 +4,176 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, BookOpen, Palette, Zap, Code, Smartphone } from "lucide-react"
+import { Separator } from "@/components/ui/separator"
+import { 
+  BookOpen, 
+  ExternalLink, 
+  FileText, 
+  Palette, 
+  Code, 
+  Zap, 
+  Github,
+  ArrowRight,
+  CheckCircle
+} from "lucide-react"
 
-export default function HomePage() {
+export default function WelcomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="flex-1 flex items-center justify-center py-16">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          {/* Branding */}
-          <div className="space-y-4">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              Next.js 15 + shadcn/ui
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-              Professional starter template with Web Interface Guidelines
-            </p>
-            <div className="flex justify-center gap-2">
-              <Badge variant="secondary">Next.js 15</Badge>
-              <Badge variant="secondary">shadcn/ui</Badge>
-              <Badge variant="secondary">TypeScript</Badge>
-              <Badge variant="secondary">Tailwind CSS</Badge>
+          {/* Project Title & Description */}
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+                Next.js 15 + shadcn/ui
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+                Professional starter template with Web Interface Guidelines
+              </p>
+            </div>
+            
+            {/* Tech Stack Badges */}
+            <div className="flex justify-center gap-3 flex-wrap">
+              <Badge variant="secondary" className="text-sm px-3 py-1">Next.js 15</Badge>
+              <Badge variant="secondary" className="text-sm px-3 py-1">shadcn/ui</Badge>
+              <Badge variant="secondary" className="text-sm px-3 py-1">TypeScript</Badge>
+              <Badge variant="secondary" className="text-sm px-3 py-1">Tailwind CSS v4</Badge>
             </div>
           </div>
 
           {/* Quick Start Guide */}
-          <Card className="max-w-2xl mx-auto">
+          <Card className="max-w-3xl mx-auto">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <BookOpen className="h-5 w-5" />
-                Getting Started
+              <CardTitle className="flex items-center gap-2 text-2xl">
+                <Zap className="h-6 w-6" />
+                Get Started
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="text-lg">
                 Everything you need to start building your next project
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="text-left space-y-3">
-                <p className="text-sm text-muted-foreground">
-                  Navigate to the documentation to find all the information you need:
-                </p>
-                <div className="flex flex-col gap-3">
-                  <Link href="/docs">
-                    <Button variant="outline" className="w-full justify-between">
-                      <span className="flex items-center gap-2">
-                        <BookOpen className="h-4 w-4" />
-                        Component Documentation
-                      </span>
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </Link>
-                  <Link href="/docs/shadcn">
-                    <Button variant="outline" className="w-full justify-between">
-                      <span className="flex items-center gap-2">
-                        <Palette className="h-4 w-4" />
-                        shadcn/ui Guides
-                      </span>
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  </Link>
+            <CardContent className="space-y-6">
+              {/* Getting Started Steps */}
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div className="text-left">
+                    <p className="font-medium">All components are ready to use</p>
+                    <p className="text-sm text-muted-foreground">
+                      56 shadcn/ui components pre-installed and configured
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div className="text-left">
+                    <p className="font-medium">Professional guidelines applied</p>
+                    <p className="text-sm text-muted-foreground">
+                      Web Interface Guidelines for polished UX
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                  <div className="text-left">
+                    <p className="font-medium">Dark mode & responsive design</p>
+                    <p className="text-sm text-muted-foreground">
+                      Built-in theme switching and mobile-first approach
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <Separator />
+
+              {/* Documentation Links */}
+              <div className="space-y-4">
+                <h3 className="font-semibold text-lg">Documentation & Resources</h3>
+                <div className="grid gap-3 md:grid-cols-2">
+                  <Button variant="outline" className="h-auto p-4 justify-start" asChild>
+                    <Link href="/docs">
+                      <div className="flex items-center gap-3">
+                        <BookOpen className="h-5 w-5" />
+                        <div className="text-left">
+                          <div className="font-medium">Local Documentation</div>
+                          <div className="text-sm text-muted-foreground">Complete component guides</div>
+                        </div>
+                      </div>
+                    </Link>
+                  </Button>
+                  
+                  <Button variant="outline" className="h-auto p-4 justify-start" asChild>
+                    <a href="https://ui.shadcn.com" target="_blank" rel="noopener noreferrer">
+                      <div className="flex items-center gap-3">
+                        <ExternalLink className="h-5 w-5" />
+                        <div className="text-left">
+                          <div className="font-medium">shadcn/ui Docs</div>
+                          <div className="text-sm text-muted-foreground">Official documentation</div>
+                        </div>
+                      </div>
+                    </a>
+                  </Button>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Features */}
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
+          {/* Quick Cleanup Guide */}
+          <Card className="max-w-3xl mx-auto">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <FileText className="h-5 w-5" />
+                Start Building Your Project
+              </CardTitle>
+              <CardDescription>
+                Clean up the template and start building your application
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="text-left space-y-3">
+                <p className="text-sm text-muted-foreground">
+                  To start building your own project, you can:
+                </p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-start gap-2">
+                    <span className="text-muted-foreground">•</span>
+                    <span>Replace the content in <code className="bg-muted px-1 rounded">src/app/page.tsx</code> with your own</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-muted-foreground">•</span>
+                    <span>Update the navigation in <code className="bg-muted px-1 rounded">src/components/main-navigation.tsx</code></span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-muted-foreground">•</span>
+                    <span>Customize colors in <code className="bg-muted px-1 rounded">src/app/globals.css</code></span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-muted-foreground">•</span>
+                    <span>Add new pages in <code className="bg-muted px-1 rounded">src/app/</code> directory</span>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Features Grid */}
+          <div className="grid gap-6 md:grid-cols-3">
             <Card>
               <CardHeader className="text-center">
-                <Zap className="h-8 w-8 mx-auto mb-2 text-primary" />
+                <Code className="h-8 w-8 mx-auto mb-2 text-primary" />
                 <CardTitle className="text-lg">Ready to Use</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  All shadcn/ui components installed and configured
+                  All shadcn/ui components installed and configured with TypeScript
                 </p>
               </CardContent>
             </Card>
+            
             <Card>
               <CardHeader className="text-center">
                 <Palette className="h-8 w-8 mx-auto mb-2 text-primary" />
@@ -88,18 +181,19 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Web Interface Guidelines applied for polished UX
+                  Web Interface Guidelines applied for polished, accessible UX
                 </p>
               </CardContent>
             </Card>
+            
             <Card>
               <CardHeader className="text-center">
-                <Smartphone className="h-8 w-8 mx-auto mb-2 text-primary" />
-                <CardTitle className="text-lg">Responsive</CardTitle>
+                <Zap className="h-8 w-8 mx-auto mb-2 text-primary" />
+                <CardTitle className="text-lg">Fast & Modern</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Mobile-first design with dark mode support
+                  Next.js 15 with App Router, Turbopack, and React 19
                 </p>
               </CardContent>
             </Card>

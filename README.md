@@ -12,7 +12,7 @@ A professional, production-ready starter template featuring Next.js 15, shadcn/u
 - **Web Interface Guidelines** - Professional UX patterns applied
 - **Sonner** - Modern toast notifications
 - **Sticky Navigation** - Professional header with theme toggle
-- **Documentation** - Complete component guides included
+- **Documentation** - Complete component guides included in `/docs` folder
 
 ## 🚀 Quick Start
 
@@ -68,18 +68,21 @@ All 56 shadcn/ui components are pre-installed and ready to use:
 
 ## 📚 Documentation
 
-Navigate to `/docs` to access complete component documentation and guides:
+The template includes complete documentation in the `/docs` folder:
 
 - **Component Documentation** - Detailed usage examples for all components
 - **shadcn/ui Guides** - Setup, theming, and customization guides
 - **Web Interface Guidelines** - Professional UX patterns and best practices
 
+You can also visit the [official shadcn/ui documentation](https://ui.shadcn.com/) for additional resources.
+
 ## 🎯 Getting Started
 
 1. **Explore Components**: Visit `/docs` to see all available components
 2. **Customize Theme**: Modify colors in `src/app/globals.css`
-3. **Add Pages**: Create new pages in `src/app/`
-4. **Build**: Start building your application!
+3. **Update Navigation**: Modify `src/components/main-navigation.tsx`
+4. **Add Pages**: Create new pages in `src/app/`
+5. **Build**: Start building your application!
 
 ## 🛠️ Development
 

@@ -20,9 +20,6 @@ export function MainNavigation() {
           <Link href="/" className="transition-colors hover:text-foreground/80">
             Home
           </Link>
-          <Link href="/docs" className="transition-colors hover:text-foreground/80">
-            Documentation
-          </Link>
         </nav>
 
         {/* Right side */}

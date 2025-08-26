@@ -13,9 +13,6 @@ export function Footer() {
         </div>
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="sm" asChild>
-            <Link href="/docs">Documentation</Link>
-          </Button>
-          <Button variant="ghost" size="sm" asChild>
             <a 
               href="https://github.com/shadcn-ui/ui" 
               target="_blank" 
