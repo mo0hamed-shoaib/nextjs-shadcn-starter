@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="flex-1 flex items-center justify-center px-4 py-16">
+      <section className="flex-1 flex items-center justify-center py-16">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Branding */}
           <div className="space-y-4">

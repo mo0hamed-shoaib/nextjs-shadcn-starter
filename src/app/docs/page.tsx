@@ -6,7 +6,7 @@ import { BookOpen, Palette, Code, Settings, FileText, ArrowRight } from "lucide-
 
 export default function DocsPage() {
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
+    <div className="py-8 max-w-4xl mx-auto">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Documentation</h1>
         <p className="text-xl text-muted-foreground">
