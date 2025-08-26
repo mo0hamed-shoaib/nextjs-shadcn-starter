@@ -9,11 +9,7 @@ import {
   BookOpen, 
   ExternalLink, 
   FileText, 
-  Palette, 
-  Code, 
   Zap, 
-  Github,
-  ArrowRight,
   CheckCircle
 } from "lucide-react"
 
@@ -158,46 +154,7 @@ export default function WelcomePage() {
                 </div>
               </div>
             </CardContent>
-          </Card>
-
-          {/* Features Grid */}
-          <div className="grid gap-6 md:grid-cols-3">
-            <Card>
-              <CardHeader className="text-center">
-                <Code className="h-8 w-8 mx-auto mb-2 text-primary" />
-                <CardTitle className="text-lg">Ready to Use</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  All shadcn/ui components installed and configured with TypeScript
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardHeader className="text-center">
-                <Palette className="h-8 w-8 mx-auto mb-2 text-primary" />
-                <CardTitle className="text-lg">Professional</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Web Interface Guidelines applied for polished, accessible UX
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card>
-              <CardHeader className="text-center">
-                <Zap className="h-8 w-8 mx-auto mb-2 text-primary" />
-                <CardTitle className="text-lg">Fast & Modern</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Next.js 15 with App Router, Turbopack, and React 19
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+                    </Card>
         </div>
       </section>
     </div>

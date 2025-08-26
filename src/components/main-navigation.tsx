@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { Github } from "lucide-react"
 
 export function MainNavigation() {
   return (
@@ -24,6 +25,16 @@ export function MainNavigation() {
 
         {/* Right side */}
         <div className="ml-auto flex items-center space-x-2">
+          <Button variant="ghost" size="sm" className="h-8 px-2" asChild>
+            <a 
+              href="https://github.com/shadcn-ui/ui" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="View shadcn/ui on GitHub"
+            >
+              <Github className="h-4 w-4" />
+            </a>
+          </Button>
           <ThemeToggle />
         </div>
       </div>
