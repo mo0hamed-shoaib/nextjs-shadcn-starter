@@ -20,7 +20,7 @@
 
 ```bash
 # Using npx (recommended)
-npx nextjs-shadcn-starter@latest my-app
+npx create-nextjs-shadcn-starter@latest my-app
 
 # Or using npm
 npm create nextjs-shadcn-starter@latest my-app
