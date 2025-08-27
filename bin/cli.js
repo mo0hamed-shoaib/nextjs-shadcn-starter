@@ -102,14 +102,8 @@ function main() {
     // Create project directory
     fs.mkdirSync(projectPath, { recursive: true });
 
-    // Copy template files
-    const templatePath = path.join(__dirname, '..', 'template');
-    if (fs.existsSync(templatePath)) {
-      copyDirectory(templatePath, projectPath);
-    } else {
-      // Fallback: copy current directory files
-      copyCurrentProject(projectPath);
-    }
+    // Copy current project files (starter template)
+    copyCurrentProject(projectPath);
 
     // Initialize git repository
     try {
@@ -160,11 +154,13 @@ function copyCurrentProject(destPath) {
     '.next',
     'bin',
     'template',
+    'scripts',
     'package-lock.json',
     'yarn.lock',
     'pnpm-lock.yaml',
     '.env.local',
-    '.env.example'
+    '.env.example',
+    'PUBLISHING.md'
   ];
 
   for (const entry of entries) {
@@ -179,6 +175,32 @@ function copyCurrentProject(destPath) {
     } else {
       fs.copyFileSync(srcPath, destFilePath);
     }
+  }
+
+  // Update package.json for the generated project
+  const packageJsonPath = path.join(destPath, 'package.json');
+  if (fs.existsSync(packageJsonPath)) {
+    const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+    
+    // Remove npm-specific fields
+    delete packageJson.bin;
+    delete packageJson.files;
+    delete packageJson.engines;
+    delete packageJson.repository;
+    delete packageJson.bugs;
+    delete packageJson.homepage;
+    delete packageJson.prepublishOnly;
+    delete packageJson.postinstall;
+    delete packageJson['publish:starter'];
+    
+    // Update package info for user project
+    packageJson.name = path.basename(destPath);
+    packageJson.version = '0.1.0';
+    packageJson.private = true;
+    packageJson.description = 'A Next.js 15 + shadcn/ui project';
+    
+    // Write the updated package.json
+    fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
   }
 }
 
