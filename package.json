@@ -1,6 +1,6 @@
 {
   "name": "create-nextjs-shadcn-starter",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A professional, production-ready starter template featuring Next.js 15, shadcn/ui components, and Web Interface Guidelines",
   "keywords": [
     "nextjs",
@@ -49,7 +49,6 @@
     "start": "next start",
     "lint": "eslint",
     "prepublishOnly": "echo 'Skipping build for starter template'",
-
     "publish:starter": "bash scripts/publish.sh"
   },
   "dependencies": {
