@@ -1,12 +1,56 @@
 {
   "name": "nextjs-shadcn-starter",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A professional, production-ready starter template featuring Next.js 15, shadcn/ui components, and Web Interface Guidelines",
+  "keywords": [
+    "nextjs",
+    "shadcn-ui",
+    "typescript",
+    "tailwindcss",
+    "starter",
+    "template",
+    "react",
+    "dark-mode",
+    "components",
+    "web-interface-guidelines"
+  ],
+  "author": {
+    "name": "Mohamed Gamal",
+    "email": "mohamed.g.shoaib@gmail.com",
+    "url": "https://github.com/mo0hamed-shoaib"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mo0hamed-shoaib/nextjs-shadcn-starter.git",
+    "directory": "starter"
+  },
+  "bugs": {
+    "url": "https://github.com/mo0hamed-shoaib/nextjs-shadcn-starter/tree/starter/issues"
+  },
+  "homepage": "https://github.com/mo0hamed-shoaib/nextjs-shadcn-starter/tree/starter#readme",
+  "bin": {
+    "nextjs-shadcn-starter": "./bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "template/",
+    "scripts/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prepublishOnly": "npm run build",
+    "postinstall": "node scripts/postinstall.js",
+    "publish:starter": "bash scripts/publish.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
@@ -54,7 +98,8 @@
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "vaul": "^1.1.2",
-    "zod": "^4.1.3"
+    "zod": "^4.1.3",
+    "chalk": "^5.3.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
