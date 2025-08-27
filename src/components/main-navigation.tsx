@@ -41,12 +41,13 @@ export function MainNavigation() {
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="sm" asChild>
               <a 
-                href="https://github.com/mo0hamed-shoaib/nextjs-shadcn-starter/tree/starter" 
+                href="https://github.com/shadcn-ui/ui" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                aria-label="View on GitHub"
+                aria-label="shadcn/ui GitHub"
               >
-                <Github className="h-4 w-4" />
+                <Github className="h-4 w-4 mr-2" />
+                shadcn/ui
               </a>
             </Button>
             <ThemeToggle />
