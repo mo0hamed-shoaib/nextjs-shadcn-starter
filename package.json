@@ -37,7 +37,8 @@
     "template/",
     "scripts/",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "template/.gitignore"
   ],
   "engines": {
     "node": ">=18.0.0",
