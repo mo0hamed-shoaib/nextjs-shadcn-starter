@@ -115,7 +115,7 @@ function main() {
     try {
       execSync('git init', { cwd: projectPath, stdio: 'ignore' });
       console.log(chalk.green('✅ Git repository initialized'));
-    } catch (error) {
+    } catch {
       console.log(chalk.yellow('⚠️  Could not initialize git repository'));
     }
 
