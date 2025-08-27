@@ -135,6 +135,14 @@ function main() {
     console.log(chalk.cyan('📦 Installing dependencies...'));
     execSync('npm install --ignore-scripts', { cwd: projectPath, stdio: 'inherit' });
 
+    // Fix .gitignore file (npm converts .gitignore to .npmignore)
+    const npmignorePath = path.join(projectPath, '.npmignore');
+    const gitignorePath = path.join(projectPath, '.gitignore');
+    if (fs.existsSync(npmignorePath) && !fs.existsSync(gitignorePath)) {
+      fs.renameSync(npmignorePath, gitignorePath);
+      console.log(chalk.green('✅ .gitignore file created'));
+    }
+
     console.log('');
     console.log(successMessage);
 
