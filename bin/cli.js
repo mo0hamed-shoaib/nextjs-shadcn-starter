@@ -102,8 +102,14 @@ function main() {
     // Create project directory
     fs.mkdirSync(projectPath, { recursive: true });
 
-    // Copy current project files (starter template)
-    copyCurrentProject(projectPath);
+    // Copy template files
+    const templatePath = path.join(__dirname, '..', 'template');
+    if (fs.existsSync(templatePath)) {
+      copyDirectory(templatePath, projectPath);
+    } else {
+      // Fallback: copy current directory files
+      copyCurrentProject(projectPath);
+    }
 
     // Initialize git repository
     try {
