@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-shadcn-starter",
+  "name": "create-nextjs-shadcn-starter",
   "version": "1.0.3",
   "description": "A professional, production-ready starter template featuring Next.js 15, shadcn/ui components, and Web Interface Guidelines",
   "keywords": [
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/mo0hamed-shoaib/nextjs-shadcn-starter/tree/starter#readme",
   "bin": {
-    "nextjs-shadcn-starter": "./bin/cli.js"
+    "create-nextjs-shadcn-starter": "./bin/cli.js"
   },
   "files": [
     "bin/",

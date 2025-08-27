@@ -1,5 +1,17 @@
 #!/usr/bin/env node
 
+// Ensure this script is executable
+if (process.platform !== 'win32') {
+  const fs = require('fs');
+  const path = require('path');
+  const scriptPath = path.resolve(__filename);
+  try {
+    fs.chmodSync(scriptPath, '755');
+  } catch (error) {
+    // Ignore chmod errors
+  }
+}
+
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
@@ -72,7 +84,7 @@ function main() {
   if (!projectName) {
     console.log(banner);
     console.log(chalk.red('❌ Error: Please provide a project name.'));
-    console.log(chalk.yellow('Usage: npx nextjs-shadcn-starter@latest my-app'));
+    console.log(chalk.yellow('Usage: npx create-nextjs-shadcn-starter@latest my-app'));
     process.exit(1);
   }
 
