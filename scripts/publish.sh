@@ -38,16 +38,9 @@ fi
 echo -e "${BLUE}📥 Pulling latest changes...${NC}"
 git pull origin starter
 
-# Build the project
-echo -e "${BLUE}🔨 Building the project...${NC}"
-npm run build
-
-if [ $? -ne 0 ]; then
-    echo -e "${RED}❌ Build failed. Please fix the errors before publishing.${NC}"
-    exit 1
-fi
-
-echo -e "${GREEN}✅ Build successful${NC}"
+# Skip build for starter template
+echo -e "${BLUE}🔨 Skipping build for starter template...${NC}"
+echo -e "${GREEN}✅ Build step skipped${NC}"
 
 # Test the package locally
 echo -e "${BLUE}🧪 Testing package locally...${NC}"
