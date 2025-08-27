@@ -113,9 +113,9 @@ function main() {
       console.log(chalk.yellow('⚠️  Could not initialize git repository'));
     }
 
-    // Install dependencies
+    // Install dependencies (skip postinstall script)
     console.log(chalk.cyan('📦 Installing dependencies...'));
-    execSync('npm install', { cwd: projectPath, stdio: 'inherit' });
+    execSync('npm install --ignore-scripts', { cwd: projectPath, stdio: 'inherit' });
 
     console.log('');
     console.log(successMessage);
