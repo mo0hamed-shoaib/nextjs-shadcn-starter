@@ -1,6 +1,6 @@
 {
   "name": "nextjs-shadcn-starter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A professional, production-ready starter template featuring Next.js 15, shadcn/ui components, and Web Interface Guidelines",
   "keywords": [
     "nextjs",
